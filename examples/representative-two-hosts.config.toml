@@ -1,0 +1,49 @@
+[deployment]
+site_id = "representative-lab"
+zone = "example.invalid"
+dns_server = "192.0.2.53"
+key_file = "/etc/dns-shepherd/rfc2136-example.invalid.key"
+update_adapter = "bind_nsupdate"
+
+[defaults]
+ttl = 30
+check_timeout_seconds = 2
+retain_last_known_good = true
+
+[hosts.alpha]
+enabled = true
+record = "alpha"
+ttl = 30
+description = "Representative first managed host"
+diagnostic_records = ["alpha-lan", "alpha-wifi"]
+
+[[hosts.alpha.candidates]]
+name = "lan"
+address = "192.0.2.10"
+check = "tcp"
+port = 22
+
+[[hosts.alpha.candidates]]
+name = "wifi"
+address = "192.0.2.110"
+check = "tcp"
+port = 22
+
+[hosts.beta]
+enabled = true
+record = "beta"
+ttl = 45
+description = "Representative second managed host"
+diagnostic_records = ["beta-lan", "beta-ts"]
+
+[[hosts.beta.candidates]]
+name = "lan"
+address = "198.51.100.20"
+check = "tcp"
+port = 22
+
+[[hosts.beta.candidates]]
+name = "tailscale"
+address = "203.0.113.20"
+check = "tcp"
+port = 22

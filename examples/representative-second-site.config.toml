@@ -1,0 +1,36 @@
+[deployment]
+site_id = "representative-branch"
+zone = "branch.example.invalid"
+dns_server = "198.51.100.53"
+key_file = "/etc/dns-shepherd/branch.example.invalid.key"
+update_adapter = "bind_nsupdate"
+
+[defaults]
+ttl = 60
+check_timeout_seconds = 3
+retain_last_known_good = true
+
+[hosts.gateway]
+enabled = true
+record = "gateway"
+ttl = 60
+description = "Representative second-site managed host"
+diagnostic_records = ["gateway-lan", "gateway-wifi", "gateway-ts"]
+
+[[hosts.gateway.candidates]]
+name = "lan"
+address = "192.0.2.40"
+check = "tcp"
+port = 22
+
+[[hosts.gateway.candidates]]
+name = "wifi"
+address = "192.0.2.140"
+check = "tcp"
+port = 22
+
+[[hosts.gateway.candidates]]
+name = "tailscale"
+address = "203.0.113.40"
+check = "tcp"
+port = 22

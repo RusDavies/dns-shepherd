@@ -1,0 +1,12 @@
+[Unit]
+Description=Run DNS failover updates
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=30s
+AccuracySec=5s
+RandomizedDelaySec=2s
+Persistent=false
+
+[Install]
+WantedBy=timers.target

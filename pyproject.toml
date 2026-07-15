@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dns-shepherd"
+version = "0.1.0"
+description = "Configuration-driven DNS failover updater for RFC2136-capable DNS services"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[project.scripts]
+dns-shepherd = "dns_shepherd.updater:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

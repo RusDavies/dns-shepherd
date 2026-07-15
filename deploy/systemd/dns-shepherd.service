@@ -1,0 +1,21 @@
+[Unit]
+Description=Update DNS failover records
+Wants=network-online.target
+After=network-online.target
+ConditionPathExists=/etc/dns-shepherd/config.toml
+ConditionPathExists=/etc/dns-shepherd/rfc2136.key
+
+[Service]
+Type=oneshot
+User=named
+Group=named
+ExecStart=/usr/bin/dns-shepherd update --config /etc/dns-shepherd/config.toml
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+SystemCallArchitectures=native
