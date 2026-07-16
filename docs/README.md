@@ -1,10 +1,12 @@
 # Documentation
 
-This initial public tree contains the runnable updater, tests, representative
-examples, systemd unit templates, and Fedora installation guidance.
+This public tree contains the runnable updater, tests, representative examples,
+systemd unit templates, Fedora installation guidance, and public contribution,
+security, and release notes.
 
 - [INSTALL.md](INSTALL.md): RPM-managed paths, site-local config/key handling,
   validation, and systemd timer operations.
-
-Fuller public security, packaging, and release documentation will be added
-before publication.
+- [../CONTRIBUTING.md](../CONTRIBUTING.md): contribution workflow and
+  public-safe example rules.
+- [../SECURITY.md](../SECURITY.md): security model and vulnerability reporting.
+- [../RELEASES.md](../RELEASES.md): release-readiness checklist and versioning.
