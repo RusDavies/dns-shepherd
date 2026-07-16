@@ -14,6 +14,13 @@ Build from a clean source tree with standard Fedora tooling:
 rpmbuild -ba packaging/rpm/dns-shepherd.spec
 ```
 
+The repository verification gate wraps that process with a temporary RPM topdir
+and generated source archive:
+
+```bash
+scripts/check_rpm_build.sh
+```
+
 The package installs:
 
 - `/usr/bin/dns-shepherd`

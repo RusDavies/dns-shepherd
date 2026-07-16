@@ -25,6 +25,19 @@ Site-local files are deliberately not owned by the RPM:
 
 The package depends on `bind-utils` for `dig` and `nsupdate`.
 
+## Build Verification
+
+The source tree includes an RPM build verification script:
+
+```bash
+scripts/check_rpm_build.sh
+```
+
+The script creates a temporary RPM topdir, builds a source archive from the
+current checkout, runs `rpmbuild -ba packaging/rpm/dns-shepherd.spec`, and
+prints the generated binary and source RPM paths. The repository check gate
+runs this script after the Python tests.
+
 ## Site Configuration
 
 Create the configuration directory and install local files with permissions that

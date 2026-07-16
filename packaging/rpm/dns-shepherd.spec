@@ -25,7 +25,7 @@ are scoped to the managed records.
 %autosetup -n %{name}-%{version}
 
 %generate_buildrequires
-%pyproject_buildrequires -t
+%pyproject_buildrequires
 
 %build
 %pyproject_wheel
