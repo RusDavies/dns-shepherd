@@ -41,3 +41,10 @@ documentation domains and IP ranges only.
 - Run `validate` and `dry-run` before enabling the timer.
 - Use the private marker scan before any public push when syncing from a private
   workbench.
+
+## Packaging
+
+Fedora RPM packaging metadata lives under `packaging/rpm/`. The package installs
+the `dns-shepherd` CLI, Python module, and systemd service/timer units. Local
+configuration and TSIG keys are deployment-owned and are not included in the
+RPM.
