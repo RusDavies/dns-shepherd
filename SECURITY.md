@@ -14,8 +14,8 @@ scoped credentials.
 
 ## Reporting Vulnerabilities
 
-Please report security issues privately to the project maintainer before public
-disclosure. Include:
+Please report security issues through GitHub's private vulnerability reporting
+for this repository before public disclosure. Include:
 
 - affected version or commit;
 - summary of the impact;
