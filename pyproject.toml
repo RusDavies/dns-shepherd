@@ -8,6 +8,9 @@ version = "0.1.0"
 description = "Configuration-driven DNS failover updater for RFC2136-capable DNS services"
 requires-python = ">=3.11"
 license = "MIT"
+authors = [
+    { name = "Russ Davies" },
+]
 dependencies = []
 
 [project.scripts]
