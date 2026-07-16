@@ -34,6 +34,8 @@ Configurations are TOML files with one deployment and one or more managed
 hosts. Representative public examples live in `examples/` and use reserved
 documentation domains and IP ranges only.
 
+Fedora installation and systemd timer guidance lives in `docs/INSTALL.md`.
+
 ## Safety
 
 - Keep TSIG secrets in key files, not in the TOML config.

@@ -25,3 +25,6 @@ The package installs:
 Site-local configuration and TSIG key files are deliberately not packaged. A
 deployment overlay should create `/etc/dns-shepherd/config.toml` and
 `/etc/dns-shepherd/rfc2136.key` with local ownership and permissions.
+
+See `docs/INSTALL.md` for the Fedora installation shape, service account
+expectations, validation steps, and systemd timer operations.
