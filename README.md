@@ -18,10 +18,19 @@ future backends can be added without changing how host failover is modeled.
 - Supports validation, dry-run, and one-shot update modes.
 - Runs well from a systemd timer on Fedora-style hosts.
 
-`dns-shepherd` is not a dynamic DNS provider client like `ddclient`, and it is
-not a VRRP/load-balancer replacement like `keepalived`. It is for local
-authoritative DNS failover where you want a host name to follow the best
-reachable route under tightly scoped DNS update credentials.
+`dns-shepherd` is for local authoritative DNS failover where you want a host
+name to follow the best reachable route under tightly scoped DNS update
+credentials. It intentionally sits between a few familiar tools:
+
+- Unlike `ddclient` or `ddupdate`, it is not primarily a public dynamic-DNS
+  provider client. It manages explicitly approved records inside a DNS zone you
+  operate.
+- Unlike `python3-dns-lexicon`, it is not a general-purpose DNS provider API
+  wrapper. It owns the health-checking, candidate selection, planning, and
+  update safety model for managed host failover.
+- Unlike `keepalived`, it does not provide VRRP, virtual IP failover, or load
+  balancing. It changes DNS only after selecting the preferred reachable
+  address for a configured host.
 
 ## Quick Start
 
